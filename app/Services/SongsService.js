@@ -4,13 +4,13 @@ import store from "../store.js";
 // @ts-ignore
 let _sandBox = axios.create({
   //TODO Change YOURNAME to your actual name
-  baseURL: "//bcw-sandbox.herokuapp.com/api/YOURNAME/songs"
+  baseURL: "//bcw-sandbox.herokuapp.com/api/dennis-and-eva/songs"
 });
 
 class SongsService {
   constructor() {
     // NOTE this will get your songs on page load
-    this.getMySongs();
+    // this.getMySongs();
   }
 
   /**
@@ -23,12 +23,14 @@ class SongsService {
     // @ts-ignore
     $.getJSON(url)
       .then(res => {
+        console.log(res);
         let results = res.results.map(rawData => new Song(rawData));
         store.commit("songs", results);
       })
       .catch(err => {
         throw new Error(err);
       });
+    console.log("contents of store.State.songs:", store.State.songs);
   }
 
   /**
@@ -38,6 +40,7 @@ class SongsService {
     _sandBox
       .get()
       .then(res => {
+        //console.log(res);
         //TODO What are you going to do with this result
         let results = res.results.map(rawData => new Song(rawData));
       })

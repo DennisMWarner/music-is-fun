@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>Music is Fun</title>
-  </head>
 
-  <body class="container-fluid">
-    <header class="row">
-      <div class="col-12 bannerStyle">
-        <p>Music is Fun</p>
-      </div>
-      <div class="offset-8 col-4">
-        <form onsubmit="app.songsController.search(event)">
-          <input
-            type="text"
-            class="form-control"
-            name="query"
-            placeholder="Search For Music"
-          />
-          <button class="btn btn-success mt-1 form-control" type="submit">
-            Search
-          </button>
-        </form>
+    <title>Music is Fun!</title>
+  </head>
+  <body class="bg-secondary">
+    <header class="container-fluid">
+      <div class="row m-auto">
+        <div class="col-12">Music is Fun!</div>
+        <div class="col-12">
+          <form class="" onsubmit="app.songsController.search(event)">
+            <div class="form-group">
+              <label for="query"></label>
+              <input
+                type="text"
+                name="query"
+                class="form-control"
+                placeholder="Enter List Name here..."
+              />
+              <button
+                type="submit"
+                class="btn btn-dark mt-1 pl-5 pr-5 border border-warning"
+              >
+                +
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </header>
+    <main class="container-fluid">
+      <div class="row">
+        <div class="col-4" id="songs-list"></div>
 
-    <main class="row">
-      <div class="col-6">
-        <h3 class="text-center">Search Results</h3>
-        <div id="songs" class="col-12 m-0">
-          <!-- template to generate -->
-        </div>
-      </div>
-      <div class="col-6">
-        <h3 class="text-center">Playlist</h3>
-        <div class="col-12 m-0" id="playlist">
-          <!-- template for playlist -->
-        </div>
+        <div class="col-4" id="activeSong"></div>
+        <div class="col-4" id="playlist"></div>
       </div>
     </main>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
-      integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk="
-      crossorigin="anonymous"
-    ></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script
       src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous"
     ></script>
-    <script src="app/main.js" type="module"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="app/main.js"></script>
   </body>
 </html>

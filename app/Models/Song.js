@@ -11,14 +11,20 @@ export default class Song {
   }
 
   get Template() {
-    return `
+    return /*html*/ `<div class="row">
+    <div class="col-12 ml-3"><h4>${this.title}</h4></div>
+    <div class="col-12 img-fluid"> <img src="${this.albumArt}" alt=""/>
+    </div>
+  </div>
 
         `;
   }
 
   get playlistTemplate() {
-    return `
-
+    return /*html*/ `<div class="row">
+    <col-12>${this.title}</col-12>
+    <img src="${this.albumArt}" alt=""/>
+  </div>
         `;
   }
 }
